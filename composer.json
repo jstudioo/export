@@ -1,14 +1,14 @@
 {
-    "name": "yii2tech/spreadsheet",
-    "description": "Yii2 extension for export to a spreadsheet, e.g. Excel, LibreOffice etc.",
-    "keywords": ["yii2", "spreadsheet", "excel", "libreoffice", "export", "xls", "xlsx"],
+    "name": "ref1n/spreadsheet",
+    "description": "Spreadsheet for yii2",
+    "keywords": ["yii2", "spreadsheet"],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yii2tech/spreadsheet/issues",
+        "issues": "https://github.com/ref1n/spreadsheet/issues",
         "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "https://github.com/yii2tech/spreadsheet/wiki",
-        "source": "https://github.com/yii2tech/spreadsheet"
+        "wiki": "https://github.com/ref1n/spreadsheet/wiki",
+        "source": "https://github.com/ref1n/spreadsheet"
     },
     "authors": [
         {
@@ -29,7 +29,7 @@
         }
     ],
     "autoload": {
-        "psr-4": { "yii2tech\\spreadsheet\\": "src" }
+        "psr-4": { "ref1n\\spreadsheet\\": "src" }
     },
     "extra": {
         "branch-alias": {
