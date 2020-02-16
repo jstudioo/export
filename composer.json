@@ -1,14 +1,14 @@
 {
-    "name": "ref1n/spreadsheet",
+    "name": "jstudioo/spreadsheet",
     "description": "Spreadsheet for yii2",
     "keywords": ["yii2", "spreadsheet"],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/ref1n/spreadsheet/issues",
+        "issues": "https://github.com/jstudioo/spreadsheet/issues",
         "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "https://github.com/ref1n/spreadsheet/wiki",
-        "source": "https://github.com/ref1n/spreadsheet"
+        "wiki": "https://github.com/jstudioo/spreadsheet/wiki",
+        "source": "https://github.com/jstudioo/spreadsheet"
     },
     "authors": [
         {
@@ -29,7 +29,7 @@
         }
     ],
     "autoload": {
-        "psr-4": { "ref1n\\spreadsheet\\": "src" }
+        "psr-4": { "jstudioo\\spreadsheet\\": "src" }
     },
     "extra": {
         "branch-alias": {
