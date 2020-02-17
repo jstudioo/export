@@ -15,24 +15,6 @@ For license information check the [LICENSE](LICENSE.md)-file.
 [![Build Status](https://travis-ci.org/yii2tech/spreadsheet.svg?branch=master)](https://travis-ci.org/yii2tech/spreadsheet)
 
 
-Installation
-------------
-
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
-
-Either run
-
-```
-php composer.phar require --prefer-dist yii2tech/spreadsheet
-```
-
-or add
-
-```json
-"yii2tech/spreadsheet": "*"
-```
-
-to the require section of your composer.json.
 
 
 Usage
