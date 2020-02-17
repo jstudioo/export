@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2tech\tests\unit\spreadsheet;
+namespace jstudioo\tests\unit\spreadsheet;
 
 use yii\helpers\ArrayHelper;
 use Yii;

@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/yii2tech" target="_blank">
+    <a href="https://github.com/jstudioo" target="_blank">
         <img src="https://avatars2.githubusercontent.com/u/12951949" height="100px">
     </a>
     <h1 align="center">Spreadsheet Data Export extension for Yii2</h1>
@@ -10,9 +10,9 @@ This extension provides ability to export data to spreadsheet, e.g. Excel, Libre
 
 For license information check the [LICENSE](LICENSE.md)-file.
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/yii2tech/spreadsheet.svg)](https://packagist.org/packages/yii2tech/spreadsheet)
-[![Total Downloads](https://img.shields.io/packagist/dt/yii2tech/spreadsheet.svg)](https://packagist.org/packages/yii2tech/spreadsheet)
-[![Build Status](https://travis-ci.org/yii2tech/spreadsheet.svg?branch=master)](https://travis-ci.org/yii2tech/spreadsheet)
+[![Latest Stable Version](https://img.shields.io/packagist/v/jstudioo/spreadsheet.svg)](https://packagist.org/packages/jstudioo/spreadsheet)
+[![Total Downloads](https://img.shields.io/packagist/dt/jstudioo/spreadsheet.svg)](https://packagist.org/packages/jstudioo/spreadsheet)
+[![Build Status](https://travis-ci.org/jstudioo/spreadsheet.svg?branch=master)](https://travis-ci.org/jstudioo/spreadsheet)
 
 
 
@@ -22,14 +22,14 @@ Usage
 
 This extension provides ability to export data to a spreadsheet, e.g. Excel, LibreOffice etc.
 It is powered by [phpoffice/phpspreadsheet](https://github.com/PHPOffice/PhpSpreadsheet) library.
-Export is performed via `\yii2tech\spreadsheet\Spreadsheet` instance, which provides interface similar to `\yii\grid\GridView` widget.
+Export is performed via `\jstudioo\spreadsheet\Spreadsheet` instance, which provides interface similar to `\yii\grid\GridView` widget.
 
 Example:
 
 ```php
 <?php
 
-use yii2tech\spreadsheet\Spreadsheet;
+use jstudioo\spreadsheet\Spreadsheet;
 use yii\data\ArrayDataProvider;
 
 $exporter = new Spreadsheet([
@@ -63,15 +63,15 @@ $exporter = new Spreadsheet([
 $exporter->save('/path/to/file.xls');
 ```
 
-Please, refer to `\yii2tech\spreadsheet\Column` class for the information about column properties and configuration specifications.
+Please, refer to `\jstudioo\spreadsheet\Column` class for the information about column properties and configuration specifications.
 
-While running web application you can use `\yii2tech\spreadsheet\Spreadsheet::send()` method to send a result file to
+While running web application you can use `\jstudioo\spreadsheet\Spreadsheet::send()` method to send a result file to
 the browser through download dialog:
 
 ```php
 <?php
 
-use yii2tech\spreadsheet\Spreadsheet;
+use jstudioo\spreadsheet\Spreadsheet;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 
@@ -94,13 +94,13 @@ class ItemController extends Controller
 
 You can create an output file with multiple worksheets (tabs). For example: you may want to export data about
 equipment used in the office, keeping monitors, mouses, keyboards and so on in separated listings but in the same file.
-To do so you will need to manually call `\yii2tech\spreadsheet\Spreadsheet::render()` method with different configuration
+To do so you will need to manually call `\jstudioo\spreadsheet\Spreadsheet::render()` method with different configuration
 before creating final file. For example:
 
 ```php
 <?php
 
-use yii2tech\spreadsheet\Spreadsheet;
+use jstudioo\spreadsheet\Spreadsheet;
 use yii\data\ActiveDataProvider;
 use app\models\Equipment;
 
@@ -138,13 +138,13 @@ $exporter->save('/path/to/file.xls');
 
 As the result you will get a single *.xls file with 3 worksheets (tabs): 'Monitors', 'Mouses' and 'Keyboards'.
 
-Using `\yii2tech\spreadsheet\Spreadsheet::configure()` you can reset any spreadsheet parameter, including `columns`.
+Using `\jstudioo\spreadsheet\Spreadsheet::configure()` you can reset any spreadsheet parameter, including `columns`.
 Thus you are able to combine several entirely different sheets into a single file.
 
 
 ### Large data processing <span id="large-data-processing"></span>
 
-`\yii2tech\spreadsheet\Spreadsheet` allows exporting of the `\yii\data\DataProviderInterface` and `\yii\db\QueryInterface` instances.
+`\jstudioo\spreadsheet\Spreadsheet` allows exporting of the `\yii\data\DataProviderInterface` and `\yii\db\QueryInterface` instances.
 Export is performed via batches, which allows processing of the large data without memory overflow.
 
 In case of `\yii\data\DataProviderInterface` usage, data will be split to batches using pagination mechanism.
@@ -153,7 +153,7 @@ Thus you should setup pagination with page size in order to control batch size:
 ```php
 <?php
 
-use yii2tech\spreadsheet\Spreadsheet;
+use jstudioo\spreadsheet\Spreadsheet;
 use yii\data\ActiveDataProvider;
 
 $exporter = new Spreadsheet([
@@ -172,12 +172,12 @@ $exporter->save('/path/to/file.xls');
 In case of `\yii\db\QueryInterface` usage, `Spreadsheet` will attempt to use `batch()` method, if it is present in the query
 class (for example in case `\yii\db\Query` or `\yii\db\ActiveQuery` usage). If `batch()` method is not available -
 `yii\data\ActiveDataProvider` instance will be automatically created around given query.
-You can control batch size via `\yii2tech\spreadsheet\Spreadsheet::$batchSize`:
+You can control batch size via `\jstudioo\spreadsheet\Spreadsheet::$batchSize`:
 
 ```php
 <?php
 
-use yii2tech\spreadsheet\Spreadsheet;
+use jstudioo\spreadsheet\Spreadsheet;
 use yii\data\ActiveDataProvider;
 
 $exporter = new Spreadsheet([
@@ -191,7 +191,7 @@ $exporter->save('/path/to/file.xls');
   your program may still easily end up with PHP memory limit error on large data. This happens because of
   large complexity of the created document, which is stored in the memory during the entire process.
   In case you need to export really large data set, consider doing so via simple CSV data format
-  using [yii2tech/csv-grid](https://github.com/yii2tech/csv-grid) extension.
+  using [jstudioo/csv-grid](https://github.com/jstudioo/csv-grid) extension.
 
 
 ### Complex headers <span id="complex-headers"></span>
@@ -199,7 +199,7 @@ $exporter->save('/path/to/file.xls');
 You may union some columns in the sheet header into a groups. For example: you may have 2 different data columns:
 'Planned Revenue' and 'Actual Revenue'. In this case you may want to display them as a single column 'Revenue', split
 into 2 sub columns: 'Planned' and 'Actual'.
-This can be achieved using `\yii2tech\spreadsheet\Spreadsheet::$headerColumnUnions`. Its each entry
+This can be achieved using `\jstudioo\spreadsheet\Spreadsheet::$headerColumnUnions`. Its each entry
 should specify 'offset', which determines the amount of columns to be skipped, and 'length', which determines
 the amount of columns to be united. Other options of the union are the same as for regular column.
 For example:
@@ -207,7 +207,7 @@ For example:
 ```php
 <?php
 
-use yii2tech\spreadsheet\Spreadsheet;
+use jstudioo\spreadsheet\Spreadsheet;
 use yii\data\ArrayDataProvider;
 
 $exporter = new Spreadsheet([
@@ -258,18 +258,18 @@ $exporter->save('/path/to/file.xls');
 Before `save()` or `send()` method is invoked, you are able to edit generated spreadsheet, making some
 final adjustments to it. Several methods exist to facilitate this process:
 
- - `\yii2tech\spreadsheet\Spreadsheet::renderCell()` - renders specified cell with given content and style.
- - `\yii2tech\spreadsheet\Spreadsheet::applyCellStyle()` - applies specified style to the cell.
- - `\yii2tech\spreadsheet\Spreadsheet::mergeCells()` - merges sell range into single one.
+ - `\jstudioo\spreadsheet\Spreadsheet::renderCell()` - renders specified cell with given content and style.
+ - `\jstudioo\spreadsheet\Spreadsheet::applyCellStyle()` - applies specified style to the cell.
+ - `\jstudioo\spreadsheet\Spreadsheet::mergeCells()` - merges sell range into single one.
 
-You may use these methods, after document has been composed via `\yii2tech\spreadsheet\Spreadsheet::render()`,
+You may use these methods, after document has been composed via `\jstudioo\spreadsheet\Spreadsheet::render()`,
 to override or add some content. For example:
 
 ```php
 <?php
 
-use yii2tech\spreadsheet\Spreadsheet;
-use yii2tech\spreadsheet\SerialColumn;
+use jstudioo\spreadsheet\Spreadsheet;
+use jstudioo\spreadsheet\SerialColumn;
 use yii\data\ArrayDataProvider;
 
 $exporter = new Spreadsheet([
@@ -316,5 +316,5 @@ $exporter->mergeCells('A4:B4');
 $exporter->save('/path/to/file.xls');
 ```
 
-> Tip: you can use `\yii2tech\spreadsheet\Spreadsheet::$rowIndex` to get number of the row, which is next
+> Tip: you can use `\jstudioo\spreadsheet\Spreadsheet::$rowIndex` to get number of the row, which is next
   to the last rendered one.

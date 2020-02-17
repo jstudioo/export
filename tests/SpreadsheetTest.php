@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2tech\tests\unit\spreadsheet;
+namespace jstudioo\tests\unit\spreadsheet;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use yii\data\ActiveDataProvider;
 use yii\db\Query;
-use yii2tech\spreadsheet\DataColumn;
-use yii2tech\spreadsheet\SerialColumn;
-use yii2tech\spreadsheet\Spreadsheet;
+use jstudioo\spreadsheet\DataColumn;
+use jstudioo\spreadsheet\SerialColumn;
+use jstudioo\spreadsheet\Spreadsheet;
 use Yii;
 use yii\data\ArrayDataProvider;
 use yii\i18n\Formatter;

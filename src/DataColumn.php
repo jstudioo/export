@@ -1,11 +1,11 @@
 <?php
 /**
- * @link https://github.com/yii2tech
- * @copyright Copyright (c) 2015 Yii2tech
+ * @link https://github.com/jstudioo
+ * @copyright Copyright (c) 2015 jstudioo
  * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
 
-namespace yii2tech\spreadsheet;
+namespace jstudioo\spreadsheet;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
